@@ -41,21 +41,40 @@ namespace CalculatorMethods
                 Console.Write("Enter another number: ");
                 double num2 = Convert.ToDouble(Console.ReadLine());
 
-                if (operation_type == "1")
+                //if (operation_type == "1")
+                //{
+                //    printer(add(num1, num2));
+                //}
+                //else if (operation_type == "2")
+                //{
+                //    printer(diff(num1, num2));
+                //}
+                //else if (operation_type == "3")
+                //{
+                //    printer(pro(num1, num2));
+                //}
+                //else if (operation_type == "4")
+                //{
+                //    printer(div(num1, num2));
+                //}
+
+                switch (operation_type)
                 {
-                    printer(add(num1, num2));
-                }
-                else if (operation_type == "2")
-                {
-                    printer(diff(num1, num2));
-                }
-                else if (operation_type == "3")
-                {
-                    printer(pro(num1, num2));
-                }
-                else if (operation_type == "4")
-                {
-                    printer(div(num1, num2));
+                    case "1":
+                        printer(add(num1, num2));
+                        break;
+                    case "2":
+                        printer(diff(num1, num2));
+                        break;
+                    case "3":
+                        printer(pro(num1, num2));
+                        break;
+                    case "4":
+                        printer(div(num1, num2));
+                        break;
+                    default:
+                        Console.WriteLine("Invalid memu found!!");
+                        break;
                 }
             }
         }
