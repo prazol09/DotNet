@@ -12,53 +12,68 @@ namespace SharpCalculator
     {
         public static void Main(string[] args)
         {
-            // function to calculator function called here
-            // non-static method so, object is required to call it
-            //CalculatorMethods.Calculator obj = new CalculatorMethods.Calculator();
+            
+            Console.Write("menu:\ncalc\tcontrlstmts\toddeven\nswap\tlsearch\tfprime\nEnter a program: ");
+            string pp = Console.ReadLine();
 
-            //obj.calculator();
+            switch (pp)
+            {
+                case "calc":
+                    // function to calculator function called here
+                    CalculatorMethods.Calculator obj = new CalculatorMethods.Calculator();
+                    obj.calculator();
+                    break;
+                case "contrlstmts":
+                    ControlStmts.ControlStatememts objj = new ControlStmts.ControlStatememts();
+                    objj.condtStmts();
+                    //objj.switchstm();
+                    //objj.whileL();
+                    //objj.doWhileL();
+                    //objj.forEach();
+                    break;
+                case "oddeven":
+                    OperatorsA.OddEvenChecker obj1 = new OperatorsA.OddEvenChecker();
+                    Console.Write("Enter a number: ");
+                    int aa = Convert.ToInt32(Console.ReadLine());
+                    bool a = obj1.isEvenNumber(aa);
+                    
+                    if (a) { Console.WriteLine(aa + " is an even number");}
+                    else {Console.WriteLine(aa + " is an odd number");}
+                    break;
+                case "swap":
+                    OperatorsA.SwapNumbers obj2 = new OperatorsA.SwapNumbers();
 
-            //ControlStmts.ControlStatememts objj = new ControlStmts.ControlStatememts();
-            //objj.condtStmts();
-            //objj.switchstm();
-            //objj.whileL();
-            //objj.doWhileL();
-            //objj.forEach();
+                    Console.Write("Enter a number: ");
+                    int ac = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Enter another number: ");
+                    int bc = Convert.ToInt32(Console.ReadLine());
 
-            //OperatorsA.OddEvenChecker obj1 = new OperatorsA.OddEvenChecker();
-            //Console.Write("Enter a number: ");
-            //int aa = Convert.ToInt32(Console.ReadLine());
-            //bool a = obj1.isEvenNumber(aa);
+                    obj2.numberSwapper(ac, bc);
+                    break;
+                case "lsearch":
+                    OperatorsA.LinearSearch oj = new OperatorsA.LinearSearch();
+                    Console.Write("Enter a metal: ");
+                    string aac = Console.ReadLine();
+                    bool af = oj.isInArray(aac);
 
-            //if (a) { Console.WriteLine(aa + " is an even number");}
-            //else {Console.WriteLine(aa + " is an odd number");}
+                    Console.WriteLine("is in array: " + af);
+                    // Console.Write(! (5 % 5 == 0));
+                    break;
+                case "fprime":
+                    int[] primesN = { 379, 383, 10, 25, 389, 397, 401, 569 };
 
+                    OperatorsA.PrimeChecker obj3 = new OperatorsA.PrimeChecker();
 
-            //OperatorsA.SwapNumbers obj1 = new OperatorsA.SwapNumbers();
-
-            //Console.Write("Enter a number: ");
-            //int aa = Convert.ToInt32(Console.ReadLine());
-            //Console.Write("Enter another number: ");
-            //int ab = Convert.ToInt32(Console.ReadLine());
-
-            //obj1.numberSwapper(aa, ab);
-
-            //OperatorsA.LinearSearch oj = new OperatorsA.LinearSearch();
-            //Console.Write("Enter a metal: ");
-            //string aa = Console.ReadLine();
-            //bool a = oj.isInArray(aa);
-
-            //console.writeline("is in array: " + a);
-            //Console.Write(! (5 % 5 == 0));
-
-            int[] primesN = { 379, 383, 10, 25, 389, 397, 401, 569 };
-
-            OperatorsA.PrimeChecker obj1 = new OperatorsA.PrimeChecker();
-            obj1.primeDetector(22);
-            //for(int i = 0; i < primesN.Length; i++)
-            //{
-            //    obj1.primeDetector(primesN[i]);
+                    Console.Write("Enter a number: ");
+                    int accc = Convert.ToInt32(Console.ReadLine());
+                    obj3.primeDetector(accc);
+                    //for(int i = 0; i < primesN.Length; i++)
+                    //{
+               //    obj1.primeDetector(primesN[i]);
             //}
+                    break;
+            }
+
         }
     }
 }
