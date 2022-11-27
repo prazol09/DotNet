@@ -4,6 +4,7 @@ using static OperatorsA.OddEvenChecker;
 using static OperatorsA.SwapNumbers;
 using static OperatorsA.LinearSearch;
 using static OperatorsA.PrimeChecker;
+using static week4.Devices;
 
 
 namespace SharpCalculator
@@ -71,6 +72,13 @@ namespace SharpCalculator
                     //{
                //    obj1.primeDetector(primesN[i]);
             //}
+                    break;
+                case "1":
+                    Devices obj = new("small");
+                    obj.Intro();
+                    break;
+                default:
+                    Console.WriteLine("hahaha");
                     break;
             }
 
